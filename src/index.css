@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* Custom theme colors */
+@theme {
+  --color-burgundy: #1a0f14;
+  --color-rose-primary: #e11d48;
+  --color-pink-soft: #f9a8d4;
+  --color-gold: #fbbf24;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #1a0f14;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Font classes */
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-inter {
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a0f14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #e11d48, #f9a8d4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #f43f5e, #f9a8d4);
+}
+
+/* Selection */
+::selection {
+  background: rgba(225, 29, 72, 0.3);
+  color: white;
+}
+
+/* Image loading placeholder */
+img {
+  background: linear-gradient(135deg, #2a1520 0%, #1a0f14 100%);
+}
+
+/* Perspective for 3D transforms */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.rotate-x-12 {
+  transform: rotateX(-12deg);
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(225, 29, 72, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(225, 29, 72, 0.2);
+}
+
+/* Heart pulse animation */
+@keyframes heart-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.heart-pulse {
+  animation: heart-pulse 1.5s ease-in-out infinite;
+}
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
